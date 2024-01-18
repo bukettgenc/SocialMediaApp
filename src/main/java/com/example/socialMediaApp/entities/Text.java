@@ -18,7 +18,6 @@ import lombok.NoArgsConstructor;
 @AllArgsConstructor
 @NoArgsConstructor
 @EqualsAndHashCode(callSuper = false)	
-
 public class Text extends Base{
 	@Id
 	@GeneratedValue(strategy = GenerationType.IDENTITY)

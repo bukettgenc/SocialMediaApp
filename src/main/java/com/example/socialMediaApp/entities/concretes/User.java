@@ -1,4 +1,4 @@
-package com.example.socialMediaApp.entities;
+package com.example.socialMediaApp.entities.concretes;
 
 import java.util.Date;
 import javax.persistence.Column;

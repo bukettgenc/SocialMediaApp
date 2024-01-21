@@ -1,4 +1,4 @@
-package com.example.socialMediaApp.entities;
+package com.example.socialMediaApp.entities.concretes;
 
 import java.util.Date;
 
@@ -17,10 +17,10 @@ import lombok.Data;
 public class Base {
 	//Base'e idnin eklenmeme sebebi bazı tablolarda composite id olma ihtimali.
 
-	@Column(name = "createdDate")
+	@Column(name = "created_date")
 	private Date createdDate;
 
-	@Column(name = "updatedDate")
+	@Column(name = "updated_date")
 	private Date updatedDate;
 
 	@ManyToOne

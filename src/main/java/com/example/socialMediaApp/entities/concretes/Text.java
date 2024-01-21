@@ -1,6 +1,4 @@
-package com.example.socialMediaApp.entities;
-
-import java.sql.Blob;
+package com.example.socialMediaApp.entities.concretes;
 
 import javax.persistence.Column;
 import javax.persistence.Entity;
@@ -15,19 +13,18 @@ import lombok.EqualsAndHashCode;
 import lombok.NoArgsConstructor;
 
 @Data
-@Table(name="images")
+@Table(name="texts")
 @Entity
 @AllArgsConstructor
 @NoArgsConstructor
 @EqualsAndHashCode(callSuper = false)	
-
-public class Image extends Base {
+public class Text extends Base{
 	@Id
 	@GeneratedValue(strategy = GenerationType.IDENTITY)
 	@Column(name = "id")
 	private Integer id;
 	
-	@Column(name="image")
-	private Blob image;
+	@Column(name="content")
+	private String content;
 	
-}
+	}

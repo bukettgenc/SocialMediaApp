@@ -7,6 +7,8 @@ import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
+import javax.persistence.JoinColumn;
+import javax.persistence.ManyToOne;
 import javax.persistence.Table;
 
 import lombok.AllArgsConstructor;
@@ -15,13 +17,14 @@ import lombok.EqualsAndHashCode;
 import lombok.NoArgsConstructor;
 
 @Data
-@Table(name="images")
+@Table(name="post_images")
 @Entity
 @AllArgsConstructor
 @NoArgsConstructor
 @EqualsAndHashCode(callSuper = false)	
 
-public class Image extends Base {
+public class PostImage extends Base {
+	
 	@Id
 	@GeneratedValue(strategy = GenerationType.IDENTITY)
 	@Column(name = "id")
@@ -29,5 +32,9 @@ public class Image extends Base {
 	
 	@Column(name="image")
 	private Blob image;
+	
+	@ManyToOne
+	@JoinColumn(name = "post_id")
+	private Post post;
 	
 }

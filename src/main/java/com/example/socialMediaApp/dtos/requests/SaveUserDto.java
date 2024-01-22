@@ -1,8 +1,6 @@
-package com.example.socialMediaApp.entities.dtos.responses;
+package com.example.socialMediaApp.dtos.requests;
 
 import java.util.Date;
-
-import com.example.socialMediaApp.entities.dtos.requests.SaveUserDto;
 
 import lombok.AllArgsConstructor;
 import lombok.Data;
@@ -11,9 +9,7 @@ import lombok.NoArgsConstructor;
 @Data
 @AllArgsConstructor
 @NoArgsConstructor
-public class GetUserDto {
-	
-	private Integer id;
+public class SaveUserDto {
 
 	private String name;
 

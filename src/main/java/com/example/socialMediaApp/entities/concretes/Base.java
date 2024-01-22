@@ -15,7 +15,8 @@ import lombok.Data;
 @Data
 @MappedSuperclass
 public class Base {
-	//Base'e idnin eklenmeme sebebi bazı tablolarda composite id olma ihtimali.
+
+	// Base'e idnin eklenmeme sebebi bazı tablolarda composite id olma ihtimali.
 
 	@Column(name = "created_date")
 	private Date createdDate;

@@ -1,4 +1,4 @@
-package com.example.socialMediaApp.common.utilities.mappers;
+package com.example.socialMediaApp.core.utilities.mappers;
 
 import org.modelmapper.ModelMapper;
 

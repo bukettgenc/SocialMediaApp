@@ -26,6 +26,6 @@ public class socialMediaApplication {
 	@Bean
 	public Docket api() {
 		return new Docket(DocumentationType.SWAGGER_2).select()
-				.apis(RequestHandlerSelectors.basePackage("kodlamaio.hrms")).build();
+				.apis(RequestHandlerSelectors.basePackage("com.example.socialMediaApp")).build();
 	}
 }

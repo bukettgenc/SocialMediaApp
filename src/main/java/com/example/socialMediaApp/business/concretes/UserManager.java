@@ -21,12 +21,13 @@ public class UserManager implements UserService {
 	private ModelMapperService modelMapperService;
 
 	public DataResult<GetUserDto> addUser(SaveUserDto saveUserDto) throws UserException {
-
+		
+		usernameIsExists(saveUserDto.getUsername());
+		emailIsExists(saveUserDto.getEmail());
+		
 		User user = this.modelMapperService.forRequest().map(saveUserDto, User.class);
-		usernameIsExists(user.getUsername());
-		emailIsExists(user.getEmail());
-
-		GetUserDto getUserDto = this.modelMapperService.forResponse().map(this.iUserDao.save(user), GetUserDto.class);
+		user= this.iUserDao.save(user);
+		GetUserDto getUserDto = this.modelMapperService.forResponse().map(user, GetUserDto.class);
 
 		return new SuccessDataResult<GetUserDto>(getUserDto, "Kullanici eklendi.");
 

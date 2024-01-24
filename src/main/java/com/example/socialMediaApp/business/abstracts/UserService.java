@@ -4,7 +4,6 @@ import com.example.socialMediaApp.core.utilities.exceptions.businessExceptions.U
 import com.example.socialMediaApp.core.utilities.results.DataResult;
 import com.example.socialMediaApp.dtos.requests.userDtos.SaveUserDto;
 import com.example.socialMediaApp.dtos.responses.userDtos.GetUserDto;
-import com.example.socialMediaApp.entities.concretes.User;
 
 public interface UserService {
 	

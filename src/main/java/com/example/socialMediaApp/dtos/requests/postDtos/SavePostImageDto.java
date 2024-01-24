@@ -1,5 +1,10 @@
 package com.example.socialMediaApp.dtos.requests.postDtos;
 
-public class SavePostImageDto {
+import java.sql.Blob;
 
+
+public class SavePostImageDto {
+	
+	private Blob image;
+		
 }

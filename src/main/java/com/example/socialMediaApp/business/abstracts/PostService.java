@@ -6,5 +6,6 @@ import com.example.socialMediaApp.dtos.requests.postDtos.SavePostDto;
 import com.example.socialMediaApp.dtos.responses.postDtos.GetPostDto;
 
 public interface PostService {
+	
 	DataResult<GetPostDto> addPost(SavePostDto savePostDto) throws PostException;
 }

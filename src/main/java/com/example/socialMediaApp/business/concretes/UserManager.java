@@ -6,6 +6,7 @@ import org.springframework.stereotype.Service;
 import com.example.socialMediaApp.business.abstracts.UserService;
 import com.example.socialMediaApp.core.utilities.exceptions.businessExceptions.UserException;
 import com.example.socialMediaApp.core.utilities.mappers.ModelMapperService;
+import com.example.socialMediaApp.core.utilities.messages.Messages;
 import com.example.socialMediaApp.core.utilities.results.DataResult;
 import com.example.socialMediaApp.core.utilities.results.SuccessDataResult;
 import com.example.socialMediaApp.dataAccess.abstracts.UserDao;
@@ -35,14 +36,14 @@ public class UserManager implements UserService {
 		user = this.iUserDao.save(user);
 		GetUserDto getUserDto = this.modelMapperService.forResponse().map(user, GetUserDto.class);
 
-		return new SuccessDataResult<GetUserDto>(getUserDto, "Kullanici eklendi.");
+		return new SuccessDataResult<GetUserDto>(getUserDto, Messages.UserMessages.KULLANICI_EKLEME_BASARILI);
 
 	}
 
 	public void usernameIsExists(String username) throws UserException {
 
 		if (this.iUserDao.existsByUsername(username)) {
-			throw new UserException("Kullanici adi zaten mevcut");
+			throw new UserException(Messages.UserMessages.KULLANICI_ADI_MEVCUT);
 		}
 
 	}
@@ -50,7 +51,7 @@ public class UserManager implements UserService {
 	public void emailIsExists(String email) throws UserException {
 
 		if (this.iUserDao.existsByEmail(email)) {
-			throw new UserException("Email zaten mevcut");
+			throw new UserException(Messages.UserMessages.EMAIL_MEVCUT);
 		}
 
 	}

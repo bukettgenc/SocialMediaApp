@@ -1,9 +1,11 @@
 package com.example.socialMediaApp.business.concretes;
 
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.security.crypto.password.PasswordEncoder;
 import org.springframework.stereotype.Service;
 
 import com.example.socialMediaApp.business.abstracts.UserService;
+import com.example.socialMediaApp.core.utilities.enums.Role;
 import com.example.socialMediaApp.core.utilities.exceptions.businessExceptions.UserException;
 import com.example.socialMediaApp.core.utilities.mappers.ModelMapperService;
 import com.example.socialMediaApp.core.utilities.messages.Messages;
@@ -19,18 +21,16 @@ public class UserManager implements UserService {
 
 	private UserDao iUserDao;
 	private ModelMapperService modelMapperService;
+	private PasswordEncoder passwordEncoder;
 
 	@Autowired
-	public UserManager(UserDao iUserDao, ModelMapperService modelMapperService) {
-		super();
-		this.iUserDao = iUserDao;
-		this.modelMapperService = modelMapperService;
-	}
 
 	public DataResult<GetUserDto> addUser(SaveUserDto saveUserDto) throws UserException {
-
 		usernameIsExists(saveUserDto.getUsername());
 		emailIsExists(saveUserDto.getEmail());
+
+		saveUserDto.setPassword(passwordEncoder.encode(saveUserDto.getPassword()));
+		saveUserDto.setRole(Role.USER);
 
 		User user = this.modelMapperService.forRequest().map(saveUserDto, User.class);
 		user = this.iUserDao.save(user);
@@ -38,6 +38,13 @@ public class UserManager implements UserService {
 
 		return new SuccessDataResult<GetUserDto>(getUserDto, Messages.UserMessages.KULLANICI_EKLEME_BASARILI);
 
+	}
+
+	public UserManager(UserDao iUserDao, ModelMapperService modelMapperService, PasswordEncoder passwordEncoder) {
+		super();
+		this.iUserDao = iUserDao;
+		this.modelMapperService = modelMapperService;
+		this.passwordEncoder = passwordEncoder;
 	}
 
 	public void usernameIsExists(String username) throws UserException {

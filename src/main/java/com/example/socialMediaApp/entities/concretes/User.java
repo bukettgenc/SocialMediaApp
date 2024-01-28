@@ -5,6 +5,8 @@ import java.util.List;
 
 import javax.persistence.Column;
 import javax.persistence.Entity;
+import javax.persistence.EnumType;
+import javax.persistence.Enumerated;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
@@ -13,6 +15,8 @@ import javax.persistence.Table;
 import javax.validation.constraints.Email;
 import javax.validation.constraints.NotBlank;
 import javax.validation.constraints.NotNull;
+
+import com.example.socialMediaApp.core.utilities.enums.Role;
 
 import lombok.AllArgsConstructor;
 import lombok.Data;
@@ -61,6 +65,10 @@ public class User extends Base {
 	@Column(name = "birthday")
 	private Date birthday;
 
+	@Enumerated(EnumType.STRING)
+	@Column(name = "role",nullable = false)
+	private Role role;
+	
 	@OneToMany(mappedBy = "user")
 	private List<Post> posts;
 

@@ -2,6 +2,8 @@ package com.example.socialMediaApp.dtos.requests.userDtos;
 
 import java.util.Date;
 
+import com.example.socialMediaApp.core.utilities.enums.Role;
+
 import lombok.AllArgsConstructor;
 import lombok.Data;
 import lombok.NoArgsConstructor;
@@ -24,5 +26,7 @@ public class SaveUserDto {
 	private String rePassword;
 
 	private Date birthday;
+	
+	private Role role;
 	
 }

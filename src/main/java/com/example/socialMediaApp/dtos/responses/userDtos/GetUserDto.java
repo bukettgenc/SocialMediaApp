@@ -1,6 +1,9 @@
 package com.example.socialMediaApp.dtos.responses.userDtos;
 
 import java.util.Date;
+
+import com.example.socialMediaApp.core.utilities.enums.Role;
+
 import lombok.AllArgsConstructor;
 import lombok.Data;
 import lombok.NoArgsConstructor;
@@ -23,5 +26,7 @@ public class GetUserDto {
 	private String password;
 
 	private Date birthday;
+	
+	private Role role;
 	
 }

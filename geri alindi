@@ -1,0 +1,83 @@
+[33mcommit 6cdf3e119bf96cb15c4eadb42fcd1b2a20038347[m[33m ([m[1;36mHEAD -> [m[1;32mmaster[m[33m, [m[1;31morigin/master[m[33m)[m
+Author: buketgenc <bktgnc06@gmail.com>
+Date:   Sat Jan 27 23:28:37 2024 +0300
+
+    sonarqube entegre edilmeye baslandi
+
+[33mcommit 62e58be40950b97bed8afddbefdc7cd947b0c1d1[m
+Author: buketgenc <bktgnc06@gmail.com>
+Date:   Fri Jan 26 18:20:40 2024 +0300
+
+    gereksiz importlar kaldırıldı
+
+[33mcommit 2b794a0e4188c8fbfda24b8ef04a4b00babd72ac[m
+Author: buketgenc <bktgnc06@gmail.com>
+Date:   Wed Jan 24 13:33:03 2024 +0300
+
+    post için dtolar olusturuldu
+
+[33mcommit 1151ab905743d91c2353af3f0ec91a4b3c7e367d[m
+Author: buketgenc <bktgnc06@gmail.com>
+Date:   Tue Jan 23 17:59:55 2024 +0300
+
+    post islemlerine baslandi
+
+[33mcommit 20199774798aa21d024e77f8af5cb6e678e835b4[m
+Author: buketgenc <bktgnc06@gmail.com>
+Date:   Tue Jan 23 12:17:00 2024 +0300
+
+    kullanici ekleme servisi yazıldı
+
+[33mcommit 187018fceef2fa21670a0609d82cb20616cc33b9[m
+Author: buketgenc <bktgnc06@gmail.com>
+Date:   Tue Jan 23 00:06:29 2024 +0300
+
+    exception handler eklendi
+
+[33mcommit b0b41d9077a803760bf014e5806f12e4783c2f52[m
+Author: buketgenc <bktgnc06@gmail.com>
+Date:   Mon Jan 22 17:17:13 2024 +0300
+
+    dto eklendi
+
+[33mcommit 3bdc1d555d60a848e83d6cb9624d679379a97cd0[m
+Author: buketgenc <bktgnc06@gmail.com>
+Date:   Sun Jan 21 23:12:28 2024 +0300
+
+    model mapper eklendi
+
+[33mcommit 203388b65b5dcc68d8638124a5b32a40bbb93aa3[m
+Author: buketgenc <bktgnc06@gmail.com>
+Date:   Sun Jan 21 18:58:03 2024 +0300
+
+    genel düzeltmeler
+
+[33mcommit 835b763cb0d5e0109f13d590d670120b207483fd[m
+Author: buketgenc <bktgnc06@gmail.com>
+Date:   Thu Jan 18 16:42:51 2024 +0300
+
+    katmanalr olusturuldu
+
+[33mcommit 86bc381e3a701c057625f9edaee599a69dd67051[m
+Author: buketgenc <bktgnc06@gmail.com>
+Date:   Thu Jan 18 15:58:36 2024 +0300
+
+    entityler olusturuluyor
+
+[33mcommit 7a978cd9b9eaed718763fec935c410dcf338c2ff[m
+Author: buketgenc <bktgnc06@gmail.com>
+Date:   Wed Jan 17 22:55:13 2024 +0300
+
+    entityler olusturuluyor
+
+[33mcommit bee1e7a9bfe5ba6a289db94ebb34b163ea4af62e[m
+Author: buketgenc <bktgnc06@gmail.com>
+Date:   Tue Jan 16 09:40:26 2024 +0300
+
+    result oluşturuldu
+
+[33mcommit dfdab91aeddc66ad55ceb3dce6637a2aaca595b9[m
+Author: buketgenc <bktgnc06@gmail.com>
+Date:   Mon Jan 15 15:33:03 2024 +0300
+
+    sosyal medya uygulamasi

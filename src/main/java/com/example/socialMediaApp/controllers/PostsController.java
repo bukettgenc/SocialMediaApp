@@ -24,9 +24,10 @@ public class PostsController {
 		this.iPostService = iPostService;
 	}
 
+
 	@PostMapping("/addPostt")
 	public DataResult<GetPostDto> addPost(@RequestBody SavePostDto savePostDto) throws PostException {
-		
+
 		return this.iPostService.addPost(savePostDto);
 
 	}

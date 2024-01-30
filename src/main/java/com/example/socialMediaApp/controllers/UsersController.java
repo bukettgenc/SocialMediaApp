@@ -2,7 +2,6 @@ package com.example.socialMediaApp.controllers;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.PostMapping;
-import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
 import com.example.socialMediaApp.business.abstracts.UserService;
@@ -12,7 +11,7 @@ import com.example.socialMediaApp.dtos.requests.userDtos.SaveUserDto;
 import com.example.socialMediaApp.dtos.responses.userDtos.GetUserDto;
 
 @RestController
-@RequestMapping("/api/user")
+@RequestMapping("/api/authentication")
 public class UsersController {
 
 	private final UserService iUserService;
@@ -24,7 +23,7 @@ public class UsersController {
 	}
 
 	@PostMapping("/addUser")
-	public DataResult<GetUserDto> addUser(@RequestBody SaveUserDto saveUserDto) throws UserException {
+	public DataResult<GetUserDto> addUser( SaveUserDto saveUserDto) throws UserException {
 
 		return this.iUserService.addUser(saveUserDto);
 

@@ -9,4 +9,6 @@ public interface UserService {
 	
 	DataResult<GetUserDto> addUser(SaveUserDto saveUserDto) throws UserException;
 
+	DataResult<GetUserDto> findByUsername(String username);
+	
 }

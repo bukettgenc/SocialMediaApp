@@ -24,6 +24,12 @@ public class UserManager implements UserService {
 	private PasswordEncoder passwordEncoder;
 
 	@Autowired
+	public UserManager(UserDao iUserDao, ModelMapperService modelMapperService, PasswordEncoder passwordEncoder) {
+		super();
+		this.iUserDao = iUserDao;
+		this.modelMapperService = modelMapperService;
+		this.passwordEncoder = passwordEncoder;
+	}
 
 	public DataResult<GetUserDto> addUser(SaveUserDto saveUserDto) throws UserException {
 		usernameIsExists(saveUserDto.getUsername());
@@ -40,13 +46,6 @@ public class UserManager implements UserService {
 
 	}
 
-	public UserManager(UserDao iUserDao, ModelMapperService modelMapperService, PasswordEncoder passwordEncoder) {
-		super();
-		this.iUserDao = iUserDao;
-		this.modelMapperService = modelMapperService;
-		this.passwordEncoder = passwordEncoder;
-	}
-
 	public void usernameIsExists(String username) throws UserException {
 
 		if (this.iUserDao.existsByUsername(username)) {
@@ -60,6 +59,23 @@ public class UserManager implements UserService {
 		if (this.iUserDao.existsByEmail(email)) {
 			throw new UserException(Messages.UserMessages.EMAIL_MEVCUT);
 		}
+
+	}
+
+	public void usernameIsEmptyOrNull(String username) throws UserException {
+
+		if (username == null || username.equals("")) {
+			throw new UserException(Messages.UserMessages.KULLANICI_ADI_BOS);
+		}
+
+	}
+
+	public DataResult<GetUserDto> findByUsername(String username) {
+				
+		User user = this.iUserDao.findByUsername(username).orElseThrow(null);
+		GetUserDto getUserDto = this.modelMapperService.forResponse().map(user, GetUserDto.class);
+
+		return new SuccessDataResult<GetUserDto>(getUserDto, Messages.UserMessages.KULLANICI_BULMA_BASARILI);
 
 	}
 

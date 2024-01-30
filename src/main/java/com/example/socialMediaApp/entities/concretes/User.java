@@ -69,7 +69,7 @@ public class User extends Base {
 	@Column(name = "role",nullable = false)
 	private Role role;
 	
-	@OneToMany(mappedBy = "user")
+	@OneToMany(mappedBy = "user") 
 	private List<Post> posts;
 
 }

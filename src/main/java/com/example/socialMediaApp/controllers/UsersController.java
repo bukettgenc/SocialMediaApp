@@ -11,7 +11,7 @@ import com.example.socialMediaApp.dtos.requests.userDtos.SaveUserDto;
 import com.example.socialMediaApp.dtos.responses.userDtos.GetUserDto;
 
 @RestController
-@RequestMapping("/api/authentication")
+@RequestMapping("/api/user")
 public class UsersController {
 
 	private final UserService iUserService;
